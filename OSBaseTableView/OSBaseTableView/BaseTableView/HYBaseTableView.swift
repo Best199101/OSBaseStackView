@@ -9,6 +9,7 @@
 import UIKit
 
 typealias didScrollCallBack = (_ scrollView:UIScrollView) -> Void
+typealias loadDataCompeleteCallBack = () -> Void
 
 
 class HYBaseTableView: UITableView {
@@ -32,13 +33,13 @@ class HYBaseTableView: UITableView {
     fileprivate lazy var baseDegelete:HYBaseTableViewDegelate = {
         
         let degelete = HYBaseTableViewDegelate()
-        degelete.callBack = { [weak self] offset in
+        degelete.didScrollCallBack = { [weak self] scrollView in
             
-            guard let strongSelf = self,let block = strongSelf.didScrollCallBack else{
+            guard let strongSelf = self,let callBack = strongSelf.didScrollCallBack else{
                 return
             }
 
-            block(offset)
+            callBack(scrollView)
             
         }
         
@@ -66,7 +67,7 @@ class HYBaseTableView: UITableView {
     }
     
     override func loadPrivateSubviews() {
-
+//        self.backgroundColor = HY_Color_TableViewCell
         self.separatorStyle = .none
         self.sectionHeaderHeight = 0
         self.sectionFooterHeight = 0

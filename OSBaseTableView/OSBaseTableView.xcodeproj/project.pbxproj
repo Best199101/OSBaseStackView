@@ -15,16 +15,21 @@
 		5474378A23731A9800B42A9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5474378823731A9800B42A9C /* LaunchScreen.storyboard */; };
 		5474379523731A9800B42A9C /* OSBaseTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5474379423731A9800B42A9C /* OSBaseTableViewTests.swift */; };
 		547437A023731A9800B42A9C /* OSBaseTableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5474379F23731A9800B42A9C /* OSBaseTableViewUITests.swift */; };
-		547437B623731AF200B42A9C /* HYBaseTableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547437AE23731AF200B42A9C /* HYBaseTableViewProtocol.swift */; };
-		547437B723731AF200B42A9C /* HYBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547437AF23731AF200B42A9C /* HYBaseModel.swift */; };
-		547437B823731AF200B42A9C /* HYBaseTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547437B023731AF200B42A9C /* HYBaseTableViewDataSource.swift */; };
-		547437B923731AF200B42A9C /* HYBaseTableViewDegelate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547437B123731AF200B42A9C /* HYBaseTableViewDegelate.swift */; };
-		547437BA23731AF200B42A9C /* HYBaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547437B223731AF200B42A9C /* HYBaseTableView.swift */; };
-		547437BB23731AF200B42A9C /* HYBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547437B323731AF200B42A9C /* HYBaseCell.swift */; };
-		547437BC23731AF200B42A9C /* HYBaseCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547437B423731AF200B42A9C /* HYBaseCellProtocol.swift */; };
-		547437BD23731AF200B42A9C /* HYBaseCellTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547437B523731AF200B42A9C /* HYBaseCellTool.swift */; };
 		547437BF23731B6F00B42A9C /* Objc_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547437BE23731B6F00B42A9C /* Objc_Extension.swift */; };
 		547437C123731BEC00B42A9C /* UIResponder_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547437C023731BEB00B42A9C /* UIResponder_Extension.swift */; };
+		547BC64C237900B000854CF4 /* HYBaseCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547BC63E237900B000854CF4 /* HYBaseCollectionViewDataSource.swift */; };
+		547BC64D237900B000854CF4 /* HYBaseCollectionCellTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547BC63F237900B000854CF4 /* HYBaseCollectionCellTool.swift */; };
+		547BC64E237900B000854CF4 /* HYBaseCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547BC640237900B000854CF4 /* HYBaseCollectionCell.swift */; };
+		547BC64F237900B000854CF4 /* HYBaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547BC641237900B000854CF4 /* HYBaseCollectionView.swift */; };
+		547BC650237900B000854CF4 /* HYBaseCollectionViewDegelate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547BC642237900B000854CF4 /* HYBaseCollectionViewDegelate.swift */; };
+		547BC651237900B000854CF4 /* HYBaseTableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547BC644237900B000854CF4 /* HYBaseTableViewProtocol.swift */; };
+		547BC652237900B000854CF4 /* HYBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547BC645237900B000854CF4 /* HYBaseModel.swift */; };
+		547BC653237900B000854CF4 /* HYBaseTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547BC646237900B000854CF4 /* HYBaseTableViewDataSource.swift */; };
+		547BC654237900B000854CF4 /* HYBaseTableViewDegelate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547BC647237900B000854CF4 /* HYBaseTableViewDegelate.swift */; };
+		547BC655237900B000854CF4 /* HYBaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547BC648237900B000854CF4 /* HYBaseTableView.swift */; };
+		547BC656237900B000854CF4 /* HYBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547BC649237900B000854CF4 /* HYBaseCell.swift */; };
+		547BC657237900B000854CF4 /* HYBaseCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547BC64A237900B000854CF4 /* HYBaseCellProtocol.swift */; };
+		547BC658237900B000854CF4 /* HYBaseCellTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547BC64B237900B000854CF4 /* HYBaseCellTool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,16 +64,21 @@
 		5474379B23731A9800B42A9C /* OSBaseTableViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSBaseTableViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5474379F23731A9800B42A9C /* OSBaseTableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSBaseTableViewUITests.swift; sourceTree = "<group>"; };
 		547437A123731A9800B42A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		547437AE23731AF200B42A9C /* HYBaseTableViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseTableViewProtocol.swift; sourceTree = "<group>"; };
-		547437AF23731AF200B42A9C /* HYBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseModel.swift; sourceTree = "<group>"; };
-		547437B023731AF200B42A9C /* HYBaseTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseTableViewDataSource.swift; sourceTree = "<group>"; };
-		547437B123731AF200B42A9C /* HYBaseTableViewDegelate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseTableViewDegelate.swift; sourceTree = "<group>"; };
-		547437B223731AF200B42A9C /* HYBaseTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseTableView.swift; sourceTree = "<group>"; };
-		547437B323731AF200B42A9C /* HYBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseCell.swift; sourceTree = "<group>"; };
-		547437B423731AF200B42A9C /* HYBaseCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseCellProtocol.swift; sourceTree = "<group>"; };
-		547437B523731AF200B42A9C /* HYBaseCellTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseCellTool.swift; sourceTree = "<group>"; };
 		547437BE23731B6F00B42A9C /* Objc_Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Objc_Extension.swift; sourceTree = "<group>"; };
 		547437C023731BEB00B42A9C /* UIResponder_Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIResponder_Extension.swift; sourceTree = "<group>"; };
+		547BC63E237900B000854CF4 /* HYBaseCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		547BC63F237900B000854CF4 /* HYBaseCollectionCellTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseCollectionCellTool.swift; sourceTree = "<group>"; };
+		547BC640237900B000854CF4 /* HYBaseCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseCollectionCell.swift; sourceTree = "<group>"; };
+		547BC641237900B000854CF4 /* HYBaseCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseCollectionView.swift; sourceTree = "<group>"; };
+		547BC642237900B000854CF4 /* HYBaseCollectionViewDegelate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseCollectionViewDegelate.swift; sourceTree = "<group>"; };
+		547BC644237900B000854CF4 /* HYBaseTableViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseTableViewProtocol.swift; sourceTree = "<group>"; };
+		547BC645237900B000854CF4 /* HYBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseModel.swift; sourceTree = "<group>"; };
+		547BC646237900B000854CF4 /* HYBaseTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseTableViewDataSource.swift; sourceTree = "<group>"; };
+		547BC647237900B000854CF4 /* HYBaseTableViewDegelate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseTableViewDegelate.swift; sourceTree = "<group>"; };
+		547BC648237900B000854CF4 /* HYBaseTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseTableView.swift; sourceTree = "<group>"; };
+		547BC649237900B000854CF4 /* HYBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseCell.swift; sourceTree = "<group>"; };
+		547BC64A237900B000854CF4 /* HYBaseCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseCellProtocol.swift; sourceTree = "<group>"; };
+		547BC64B237900B000854CF4 /* HYBaseCellTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseCellTool.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				547437C223731C5D00B42A9C /* Extension */,
-				547437AD23731AF200B42A9C /* OSBaseTableView */,
+				547BC63D237900B000854CF4 /* BaseCollectionView */,
+				547BC643237900B000854CF4 /* BaseTableView */,
 				5474377D23731A9400B42A9C /* AppDelegate.swift */,
 				5474377F23731A9400B42A9C /* SceneDelegate.swift */,
 				5474378123731A9400B42A9C /* ContentView.swift */,
@@ -158,21 +169,6 @@
 			path = OSBaseTableViewUITests;
 			sourceTree = "<group>";
 		};
-		547437AD23731AF200B42A9C /* OSBaseTableView */ = {
-			isa = PBXGroup;
-			children = (
-				547437AE23731AF200B42A9C /* HYBaseTableViewProtocol.swift */,
-				547437AF23731AF200B42A9C /* HYBaseModel.swift */,
-				547437B023731AF200B42A9C /* HYBaseTableViewDataSource.swift */,
-				547437B123731AF200B42A9C /* HYBaseTableViewDegelate.swift */,
-				547437B223731AF200B42A9C /* HYBaseTableView.swift */,
-				547437B323731AF200B42A9C /* HYBaseCell.swift */,
-				547437B423731AF200B42A9C /* HYBaseCellProtocol.swift */,
-				547437B523731AF200B42A9C /* HYBaseCellTool.swift */,
-			);
-			path = OSBaseTableView;
-			sourceTree = "<group>";
-		};
 		547437C223731C5D00B42A9C /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +176,33 @@
 				547437BE23731B6F00B42A9C /* Objc_Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		547BC63D237900B000854CF4 /* BaseCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				547BC63E237900B000854CF4 /* HYBaseCollectionViewDataSource.swift */,
+				547BC63F237900B000854CF4 /* HYBaseCollectionCellTool.swift */,
+				547BC640237900B000854CF4 /* HYBaseCollectionCell.swift */,
+				547BC641237900B000854CF4 /* HYBaseCollectionView.swift */,
+				547BC642237900B000854CF4 /* HYBaseCollectionViewDegelate.swift */,
+			);
+			path = BaseCollectionView;
+			sourceTree = "<group>";
+		};
+		547BC643237900B000854CF4 /* BaseTableView */ = {
+			isa = PBXGroup;
+			children = (
+				547BC644237900B000854CF4 /* HYBaseTableViewProtocol.swift */,
+				547BC645237900B000854CF4 /* HYBaseModel.swift */,
+				547BC646237900B000854CF4 /* HYBaseTableViewDataSource.swift */,
+				547BC647237900B000854CF4 /* HYBaseTableViewDegelate.swift */,
+				547BC648237900B000854CF4 /* HYBaseTableView.swift */,
+				547BC649237900B000854CF4 /* HYBaseCell.swift */,
+				547BC64A237900B000854CF4 /* HYBaseCellProtocol.swift */,
+				547BC64B237900B000854CF4 /* HYBaseCellTool.swift */,
+			);
+			path = BaseTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,19 +336,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				547BC64D237900B000854CF4 /* HYBaseCollectionCellTool.swift in Sources */,
+				547BC653237900B000854CF4 /* HYBaseTableViewDataSource.swift in Sources */,
 				5474377E23731A9400B42A9C /* AppDelegate.swift in Sources */,
-				547437B923731AF200B42A9C /* HYBaseTableViewDegelate.swift in Sources */,
+				547BC64C237900B000854CF4 /* HYBaseCollectionViewDataSource.swift in Sources */,
+				547BC651237900B000854CF4 /* HYBaseTableViewProtocol.swift in Sources */,
 				547437C123731BEC00B42A9C /* UIResponder_Extension.swift in Sources */,
-				547437BD23731AF200B42A9C /* HYBaseCellTool.swift in Sources */,
-				547437B623731AF200B42A9C /* HYBaseTableViewProtocol.swift in Sources */,
 				5474378023731A9400B42A9C /* SceneDelegate.swift in Sources */,
+				547BC656237900B000854CF4 /* HYBaseCell.swift in Sources */,
+				547BC650237900B000854CF4 /* HYBaseCollectionViewDegelate.swift in Sources */,
+				547BC654237900B000854CF4 /* HYBaseTableViewDegelate.swift in Sources */,
+				547BC64E237900B000854CF4 /* HYBaseCollectionCell.swift in Sources */,
+				547BC657237900B000854CF4 /* HYBaseCellProtocol.swift in Sources */,
 				5474378223731A9400B42A9C /* ContentView.swift in Sources */,
-				547437B823731AF200B42A9C /* HYBaseTableViewDataSource.swift in Sources */,
-				547437B723731AF200B42A9C /* HYBaseModel.swift in Sources */,
-				547437BC23731AF200B42A9C /* HYBaseCellProtocol.swift in Sources */,
+				547BC652237900B000854CF4 /* HYBaseModel.swift in Sources */,
+				547BC655237900B000854CF4 /* HYBaseTableView.swift in Sources */,
+				547BC658237900B000854CF4 /* HYBaseCellTool.swift in Sources */,
 				547437BF23731B6F00B42A9C /* Objc_Extension.swift in Sources */,
-				547437BA23731AF200B42A9C /* HYBaseTableView.swift in Sources */,
-				547437BB23731AF200B42A9C /* HYBaseCell.swift in Sources */,
+				547BC64F237900B000854CF4 /* HYBaseCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

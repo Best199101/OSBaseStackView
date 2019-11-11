@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HYBaseModel: NSObject {
-
-    
-}
+//class HYBaseModel: GPBMessage {
+//
+//    
+//}

@@ -11,7 +11,7 @@ import UIKit
 class HYBaseTableViewDegelate: NSObject {
     
     public var dataSource:[NSObject] = []
-    public var callBack:didScrollCallBack?
+    public var didScrollCallBack:didScrollCallBack?
 
 }
 
@@ -33,8 +33,8 @@ extension HYBaseTableViewDegelate:UITableViewDelegate{
 extension HYBaseTableViewDegelate:UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
   
-        if let block = callBack{
-            block(scrollView)
+        if let callBack = didScrollCallBack{
+            callBack(scrollView)
         }
         
     }
