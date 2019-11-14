@@ -12,3 +12,8 @@ import UIKit
 //
 //    
 //}
+
+class HYBaseModel: NSObject {
+
+    
+}
