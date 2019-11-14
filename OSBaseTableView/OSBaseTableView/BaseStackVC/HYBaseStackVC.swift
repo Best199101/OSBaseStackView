@@ -126,9 +126,15 @@ extension HYBaseStackVC{
     public func reloadSubChildVC(subChild:[HYBaseStackModel]){
         
         dataSource.removeAll()
-
+        
+        appendSubChildVC(subChild: subChild)
+        
+    }
+    
+    public func appendSubChildVC(subChild:[HYBaseStackModel]){
+        
         for item in subChild{
-         
+            
             item.cellIdentifierOption = HYBaseStackCell.cellIdentifier
             
             if let stackSubTitle = item.subTitle,let stackSubVC = item.subVC {
@@ -148,6 +154,8 @@ extension HYBaseStackVC{
         }
         
     }
+    
+    
     
 }
 
