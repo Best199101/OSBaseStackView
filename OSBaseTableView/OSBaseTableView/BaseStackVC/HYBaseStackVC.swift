@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Masonry
 
 typealias indexCallBack = (_ index:UInt) -> Void
 typealias enableMulScrollCallBack = () -> Bool
@@ -17,7 +16,45 @@ class HYBaseStackVC: HYBaseVC {
     public var dataSource:[HYBaseStackModel] = []
     public var subChildVCPool:[String:HYBaseVC] = [:]
 
-    fileprivate var listCollectionView:HYBaseStackCollectionView!
+    fileprivate lazy  var listCollectionView:HYBaseCollectionView = {
+  
+        let frameSize = self.view.bounds.size
+        let flowlayout = UICollectionViewFlowLayout()
+        flowlayout.itemSize = frameSize
+        flowlayout.minimumLineSpacing = 0
+        flowlayout.minimumInteritemSpacing = 0
+        flowlayout.scrollDirection = .horizontal
+        flowlayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        let collectionView = HYBaseCollectionView(
+            frame: CGRect.zero,
+            collectionViewLayout: flowlayout)
+        collectionView.enableMulScrollCallBack = enableMulScrollCallBack
+        collectionView.didScrollCallBack = { [weak self](scrollView) in
+            
+            guard let strongSelf = self,let callBack = strongSelf.indexCallBack else{return}
+            
+            if scrollView.isTracking || scrollView.isDragging || scrollView.isDecelerating{
+                
+                let index = (scrollView.contentOffset.x / scrollView.bounds.size.width) + 0.5
+                
+                let Ind = UInt(index)
+                
+                callBack(Ind)
+    
+            }
+    
+        }
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.isPagingEnabled = true
+        collectionView.bounces = false
+        collectionView.register(HYBaseStackCell.self, forCellWithReuseIdentifier: HYBaseStackCell.cellIdentifier)
+        
+        return collectionView
+        
+    }()
     
     public var currentIndex:Int = 0{
         
@@ -50,20 +87,7 @@ class HYBaseStackVC: HYBaseVC {
     
     override func loadPrivateSubviews() {
         
-        let frameSize = self.view.bounds.size
-        let flowlayout = UICollectionViewFlowLayout()
-        flowlayout.itemSize = frameSize
-        flowlayout.minimumLineSpacing = 0
-        flowlayout.minimumInteritemSpacing = 0
-        flowlayout.scrollDirection = .horizontal
-        flowlayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        
-        listCollectionView = HYBaseStackCollectionView(
-            frame: CGRect.zero,
-            collectionViewLayout: flowlayout)
-        listCollectionView.delegate = self
-        listCollectionView.dataSource = self
-        listCollectionView.enableMulScrollCallBack = enableMulScrollCallBack
+  
         view.addSubview(listCollectionView)
     
     }
@@ -79,7 +103,7 @@ class HYBaseStackVC: HYBaseVC {
     
     override func loadPrivateData() {
         
-        listCollectionView.reloadData()
+        listCollectionView.dataSourceArr = dataSource
         
     }
     
@@ -125,64 +149,7 @@ extension HYBaseStackVC{
         
     }
     
-    
-    
 }
 
-
-
-extension HYBaseStackVC: UIScrollViewDelegate{
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        if scrollView == listCollectionView{
-            
-            
-            if scrollView.isTracking || scrollView.isDragging || scrollView.isDecelerating{
-                
-                let index = (scrollView.contentOffset.x / scrollView.bounds.size.width) + 0.5
-                
-                let Ind = UInt(index)
-                
-                if let callBack = self.indexCallBack{
-                    
-                    callBack(Ind)
-                    
-                }
-                
-            }
-      
-        }
-    }
-    
-}
-
-
-
-extension HYBaseStackVC:UICollectionViewDataSource,UICollectionViewDelegate{
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        let counts = dataSource.count
-        return counts
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-     
-        
-        let subModel = dataSource[indexPath.row]
-        
-        let cell = HYBaseCollectionCellTool.getCurrentBaseCell(collectionView: collectionView, indexPath: indexPath, model: subModel)
-        
-        return cell
-        
-    }
-    
-}
 
 

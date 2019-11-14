@@ -13,6 +13,7 @@ class HYBaseCollectionView: UICollectionView {
     public var count:Int32 = 20
     public var offset:Int32 = 0
     public var didScrollCallBack:didScrollCallBack?
+    public var enableMulScrollCallBack:enableMulScrollCallBack?
     
     public var dataSourceArr: [NSObject] = [] {
         willSet {
@@ -37,6 +38,8 @@ class HYBaseCollectionView: UICollectionView {
             callBack(scrollView)
             
         }
+        
+        degelete.enableMulScrollCallBack = enableMulScrollCallBack
         
         return degelete
         

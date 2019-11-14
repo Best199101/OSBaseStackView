@@ -11,12 +11,12 @@ import UIKit
 typealias didScrollCallBack = (_ scrollView:UIScrollView) -> Void
 typealias loadDataCompeleteCallBack = () -> Void
 
-
 class HYBaseTableView: UITableView {
     
     public var count:Int32 = 20
     public var offset:Int32 = 0
     public var didScrollCallBack:didScrollCallBack?
+    public var enableMulScrollCallBack:enableMulScrollCallBack?
 
     public var dataSourceArr: [NSObject] = [] {
         willSet {
@@ -42,6 +42,8 @@ class HYBaseTableView: UITableView {
             callBack(scrollView)
             
         }
+        
+        degelete.enableMulScrollCallBack = enableMulScrollCallBack
         
         return degelete
     

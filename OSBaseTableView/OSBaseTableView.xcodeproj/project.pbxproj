@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -35,7 +35,6 @@
 		54AE8AD0237D19AE00B200E6 /* HYBaseStackScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8ACA237D19AD00B200E6 /* HYBaseStackScrollView.swift */; };
 		54AE8AD1237D19AE00B200E6 /* HYBaseStackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8ACB237D19AD00B200E6 /* HYBaseStackModel.swift */; };
 		54AE8AD2237D19AE00B200E6 /* HYBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8ACC237D19AD00B200E6 /* HYBaseVC.swift */; };
-		54AE8AD3237D19AE00B200E6 /* HYBaseStackCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AE8ACD237D19AD00B200E6 /* HYBaseStackCollectionView.swift */; };
 		602F97315FE7352F4EFAF338 /* Pods_OSBaseTableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9755ADD4C7745EA3993A0E /* Pods_OSBaseTableView.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,7 +91,6 @@
 		54AE8ACA237D19AD00B200E6 /* HYBaseStackScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseStackScrollView.swift; sourceTree = "<group>"; };
 		54AE8ACB237D19AD00B200E6 /* HYBaseStackModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseStackModel.swift; sourceTree = "<group>"; };
 		54AE8ACC237D19AD00B200E6 /* HYBaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseVC.swift; sourceTree = "<group>"; };
-		54AE8ACD237D19AD00B200E6 /* HYBaseStackCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBaseStackCollectionView.swift; sourceTree = "<group>"; };
 		5F9755ADD4C7745EA3993A0E /* Pods_OSBaseTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OSBaseTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8F4B54889C687148DD5C36 /* Pods-OSBaseTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSBaseTableView.release.xcconfig"; path = "Target Support Files/Pods-OSBaseTableView/Pods-OSBaseTableView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,11 +227,10 @@
 			isa = PBXGroup;
 			children = (
 				54AE8AC8237D19AD00B200E6 /* HYBaseStackCell.swift */,
-				54AE8AC9237D19AD00B200E6 /* HYBaseStackVC.swift */,
 				54AE8ACA237D19AD00B200E6 /* HYBaseStackScrollView.swift */,
 				54AE8ACB237D19AD00B200E6 /* HYBaseStackModel.swift */,
 				54AE8ACC237D19AD00B200E6 /* HYBaseVC.swift */,
-				54AE8ACD237D19AD00B200E6 /* HYBaseStackCollectionView.swift */,
+				54AE8AC9237D19AD00B200E6 /* HYBaseStackVC.swift */,
 			);
 			path = BaseStackVC;
 			sourceTree = "<group>";
@@ -252,7 +249,6 @@
 				1385D9F5B8A4CCA5466E4908 /* Pods-OSBaseTableView.debug.xcconfig */,
 				BD8F4B54889C687148DD5C36 /* Pods-OSBaseTableView.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -434,7 +430,6 @@
 				547BC64D237900B000854CF4 /* HYBaseCollectionCellTool.swift in Sources */,
 				547BC653237900B000854CF4 /* HYBaseTableViewDataSource.swift in Sources */,
 				54AE8AD2237D19AE00B200E6 /* HYBaseVC.swift in Sources */,
-				54AE8AD3237D19AE00B200E6 /* HYBaseStackCollectionView.swift in Sources */,
 				54AE8AD0237D19AE00B200E6 /* HYBaseStackScrollView.swift in Sources */,
 				5474377E23731A9400B42A9C /* AppDelegate.swift in Sources */,
 				547BC64C237900B000854CF4 /* HYBaseCollectionViewDataSource.swift in Sources */,
