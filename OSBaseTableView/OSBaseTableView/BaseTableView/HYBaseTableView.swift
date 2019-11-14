@@ -42,9 +42,7 @@ class HYBaseTableView: UITableView {
             callBack(scrollView)
             
         }
-        
-        degelete.enableMulScrollCallBack = enableMulScrollCallBack
-        
+     
         return degelete
     
     }()
@@ -90,4 +88,21 @@ class HYBaseTableView: UITableView {
     }
     */
 
+}
+
+
+extension HYBaseTableView:UIGestureRecognizerDelegate{
+
+    // 多手势
+       func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool{
+
+           guard let callBack = enableMulScrollCallBack else{
+               
+               return false
+           }
+           return callBack()
+       
+       }
+    
+    
 }

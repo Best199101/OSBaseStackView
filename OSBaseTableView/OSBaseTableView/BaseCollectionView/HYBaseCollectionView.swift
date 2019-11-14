@@ -38,9 +38,7 @@ class HYBaseCollectionView: UICollectionView {
             callBack(scrollView)
             
         }
-        
-        degelete.enableMulScrollCallBack = enableMulScrollCallBack
-        
+     
         return degelete
         
     }()
@@ -87,4 +85,20 @@ class HYBaseCollectionView: UICollectionView {
     }
     */
 
+}
+
+extension HYBaseCollectionView:UIGestureRecognizerDelegate{
+
+    // 多手势
+       func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool{
+
+           guard let callBack = enableMulScrollCallBack else{
+               
+               return false
+           }
+           return callBack()
+       
+       }
+    
+    
 }

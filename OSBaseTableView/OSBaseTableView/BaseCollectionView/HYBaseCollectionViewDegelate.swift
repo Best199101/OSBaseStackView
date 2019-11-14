@@ -13,8 +13,7 @@ class HYBaseCollectionViewDegelate: NSObject {
     
     public var dataSource:[NSObject] = []
     public var didScrollCallBack:didScrollCallBack?
-    public var enableMulScrollCallBack:enableMulScrollCallBack?
-
+  
 }
 
 extension HYBaseCollectionViewDegelate:UICollectionViewDelegate{
@@ -33,18 +32,4 @@ extension HYBaseCollectionViewDegelate:UIScrollViewDelegate {
     
 }
 
-extension HYBaseCollectionViewDegelate:UIGestureRecognizerDelegate{
 
-    // 多手势
-       func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool{
-
-           guard let callBack = enableMulScrollCallBack else{
-               
-               return false
-           }
-           return callBack()
-       
-       }
-    
-    
-}
