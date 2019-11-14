@@ -135,23 +135,48 @@ extension HYBaseStackVC{
         
         for item in subChild{
             
-            item.cellIdentifierOption = HYBaseStackCell.cellIdentifier
+            let newSubChild = checkNewData(subChild: item)
+            dataSource.append(newSubChild)
             
-            if let stackSubTitle = item.subTitle,let stackSubVC = item.subVC {
+        }
+        
+    }
+    
+    public func insertSubChildVC(subChild:[HYBaseStackModel],index:Int){
+        
+        for item in subChild{
+            
+            let newSubChild = checkNewData(subChild: item)
+            if index < dataSource.count{
                 
-                if let value = subChildVCPool[stackSubTitle]{
-                    item.subVC = value
-                    dataSource.append(item)
-                    
-                }else{
-                    dataSource.append(item)
-                    subChildVCPool[stackSubTitle] = stackSubVC
-                    self.addChild(stackSubVC)
-                }
+                dataSource.insert(newSubChild, at: index)
+            }else{
                 
+                dataSource.append(newSubChild)
             }
             
         }
+        
+    }
+    
+    private func checkNewData(subChild:HYBaseStackModel) ->HYBaseStackModel{
+        
+        subChild.cellIdentifierOption = HYBaseStackCell.cellIdentifier
+        
+        if let stackSubTitle = subChild.subTitle,let stackSubVC = subChild.subVC {
+            
+            if let value = subChildVCPool[stackSubTitle]{
+                subChild.subVC = value
+                
+            }else{
+                
+                subChildVCPool[stackSubTitle] = stackSubVC
+                self.addChild(stackSubVC)
+            }
+            
+        }
+        
+        return subChild
         
     }
     
