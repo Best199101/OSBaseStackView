@@ -1,2 +1,2 @@
 # OSBaseTableView
-通用列表基类
+通用列表容器,包含stackVC、tableView、collectionView、scrollView、
