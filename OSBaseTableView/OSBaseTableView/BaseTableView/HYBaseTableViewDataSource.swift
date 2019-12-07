@@ -10,7 +10,8 @@ import UIKit
 
 class HYBaseTableViewDataSource: NSObject {
     
-    public var dataSource:[NSObject] = []
+      public var dataSourceCount:dataSourceCountCallBack?
+      public var dataSourceModel:dataSourceModelCallBack?
     
 }
 
@@ -19,18 +20,21 @@ extension HYBaseTableViewDataSource:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return dataSource.count
+        return dataSourceCount?(section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let row = indexPath.row
-        let model = dataSource[row]
+        let model = dataSourceModel?(indexPath)
         
-        let baseCell = HYBaseCellTool.getCurrentBaseCell(tableView: tableView, indexPath: indexPath, model: model)
+        if let modelInfo = model{
+            
+            return HYBaseCellTool.getCurrentBaseCell(tableView: tableView, indexPath: indexPath, model: modelInfo)
+            
+        }
         
-        return baseCell
-    
+        return UITableViewCell()
+        
     }
     
     

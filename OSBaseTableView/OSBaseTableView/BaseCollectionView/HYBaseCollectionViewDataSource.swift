@@ -11,7 +11,8 @@ import UIKit
 
 class HYBaseCollectionViewDataSource: NSObject {
     
-    public var dataSource:[NSObject] = []
+    public var dataSourceCount:dataSourceCountCallBack?
+    public var dataSourceModel:dataSourceModelCallBack?
     
 }
 
@@ -19,17 +20,21 @@ extension HYBaseTableViewDataSource:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return dataSource.count
+        return dataSourceCount?(section) ?? 0
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let row = indexPath.row
-        let model = dataSource[row]
+        let model = dataSourceModel?(indexPath)
         
-        let baseCell = HYBaseCollectionCellTool.getCurrentBaseCell(collectionView: collectionView, indexPath: indexPath, model: model)
-        return baseCell
+        if let modelInfo = model{
+            
+            let baseCell = HYBaseCollectionCellTool.getCurrentBaseCell(collectionView: collectionView, indexPath: indexPath, model: model)
+            
+        }
+    
+        return UICollectionViewCell()
         
     }
 

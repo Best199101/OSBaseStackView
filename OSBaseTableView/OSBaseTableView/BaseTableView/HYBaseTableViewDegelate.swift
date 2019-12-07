@@ -10,8 +10,8 @@ import UIKit
 
 class HYBaseTableViewDegelate: NSObject {
     
-    public var dataSource:[NSObject] = []
     public var didScrollCallBack:didScrollCallBack?
+    public var dataSourceModel:dataSourceModelCallBack?
   
 }
 
@@ -19,10 +19,14 @@ extension HYBaseTableViewDegelate:UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        let row = indexPath.row
-        let model = dataSource[row]
+        let model = dataSourceModel?(indexPath)
+        var baseCellHeight:CGFloat = 0
         
-        let baseCellHeight = HYBaseCellTool.getCurrentBaseCellHeight(tableView: tableView, indexPath: indexPath, model: model)
+        if let modelInfo = model{
+            
+            baseCellHeight = HYBaseCellTool.getCurrentBaseCellHeight(tableView: tableView, indexPath: indexPath, model: modelInfo)
+            
+        }
         
         return baseCellHeight
     }

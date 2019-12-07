@@ -11,7 +11,6 @@ import UIKit
 
 class HYBaseCollectionViewDegelate: NSObject {
     
-    public var dataSource:[NSObject] = []
     public var didScrollCallBack:didScrollCallBack?
   
 }

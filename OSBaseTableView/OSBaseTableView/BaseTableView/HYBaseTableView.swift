@@ -11,6 +11,10 @@ import UIKit
 typealias didScrollCallBack = (_ scrollView:UIScrollView) -> Void
 typealias loadDataCompeleteCallBack = () -> Void
 
+typealias dataSourceCountCallBack = (_ section:Int) -> Int
+typealias dataSourceModelCallBack = (_ indexPath:IndexPath) -> NSObject?
+
+
 class HYBaseTableView: UITableView {
     
     public var count:Int32 = 20
@@ -19,11 +23,7 @@ class HYBaseTableView: UITableView {
     public var enableMulScrollCallBack:enableMulScrollCallBack?
 
     public var dataSourceArr: [NSObject] = [] {
-        willSet {
-            self.baseDataSource.dataSource = newValue
-            self.baseDegelete.dataSource = newValue
-        }
-        
+       
         didSet{
             self.reloadData()
         }
@@ -42,7 +42,20 @@ class HYBaseTableView: UITableView {
             callBack(scrollView)
             
         }
-     
+        
+        degelete.dataSourceModel = {[weak self](indexpath) in
+            
+            guard let strongSelf = self else{
+                return nil}
+            
+            if indexpath.row < strongSelf.dataSourceArr.count{
+                return strongSelf.dataSourceArr[indexpath.row]
+            }else{
+                return nil
+            }
+            
+        }
+ 
         return degelete
     
     }()
@@ -50,6 +63,30 @@ class HYBaseTableView: UITableView {
     fileprivate lazy var baseDataSource:HYBaseTableViewDataSource = {
         
         let dataSource = HYBaseTableViewDataSource()
+    
+        dataSource.dataSourceModel = {[weak self] (indexpath) in
+            
+            guard let strongSelf = self else{
+                return nil}
+            
+            if indexpath.row < strongSelf.dataSourceArr.count{
+                return strongSelf.dataSourceArr[indexpath.row]
+            }else{
+                return nil
+            }
+            
+        }
+        
+        dataSource.dataSourceCount = {[weak self] (section)in
+            
+            guard let strongSelf = self else{
+                return 0}
+            
+            return strongSelf.dataSourceArr.count
+            
+        }
+        
+        
         
         return dataSource
         

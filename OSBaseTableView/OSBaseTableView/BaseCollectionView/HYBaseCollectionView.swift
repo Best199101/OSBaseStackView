@@ -16,11 +16,7 @@ class HYBaseCollectionView: UICollectionView {
     public var enableMulScrollCallBack:enableMulScrollCallBack?
     
     public var dataSourceArr: [NSObject] = [] {
-        willSet {
-            self.baseDataSource.dataSource = newValue
-            self.baseDegelete.dataSource = newValue
-        }
-        
+      
         didSet{
             self.reloadData()
         }
@@ -46,6 +42,27 @@ class HYBaseCollectionView: UICollectionView {
     fileprivate lazy var baseDataSource:HYBaseTableViewDataSource = {
         
         let dataSource = HYBaseTableViewDataSource()
+        dataSource.dataSourceModel = {[weak self] (indexpath) in
+            
+            guard let strongSelf = self else{
+                return nil}
+            
+            if indexpath.row < strongSelf.dataSourceArr.count{
+                return strongSelf.dataSourceArr[indexpath.row]
+            }else{
+                return nil
+            }
+            
+        }
+        
+        dataSource.dataSourceCount = {[weak self] (section)in
+            
+            guard let strongSelf = self else{
+                return 0}
+            
+            return strongSelf.dataSourceArr.count
+            
+        }
         
         return dataSource
         
